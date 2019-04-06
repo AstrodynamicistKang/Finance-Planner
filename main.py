@@ -1,4 +1,38 @@
-print("Finance Planner\n")
+print("Annualized Return Rate Calculator for a Sum of Annuity with Sales Charge\n")
+
+while True:
+
+    #x = eval(input("Enter annualized return rate, r; number of years, N and sales charge, s.\n\n"))
+
+    x = 0.1, 10, 0.0175
+
+    print("\n" + str(x))
+
+    k = (((1+((x[0])/12))**(x[1]*12))-1)/((x[0])/12*(1-x[2]))
+
+    print("\n")
+    print("{0:.5f}".format(k))
+
+    #T = eval(input("Enter a test value for the expected annualized rate of return over the period defined.\n\n"))
+
+    T = 0.1030769
+
+    LHS = 1+(k*(T/12))
+
+    RHS = (1+(T/12))**(x[1]*12)
+
+    print("{0:.5f}\n{1:.5f}\n{2:.5f}\n".format(LHS, RHS, LHS-RHS))
+    
+    ask = input("Would you like to continue? Y/N")
+    
+    if (ask.lower() == "y") or (ask.lower() == "Y"):
+        continue
+    
+    else:
+        print()
+        break
+
+print("Income Growth Simulator\n")
 
 while True:
 
